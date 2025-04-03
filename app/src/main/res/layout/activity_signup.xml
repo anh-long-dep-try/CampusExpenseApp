@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#3CBED9DE"
+    android:padding="16dp"
+    android:gravity="center_horizontal">
+
+    <!-- Illustration (ImageView) -->
+    <ImageView
+        android:id="@+id/illustration"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/financial_illustration"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Sign Up Illustration" />
+
+    <!-- Username EditText -->
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:background="@drawable/rounded_edittext_background"
+        android:padding="12dp"
+        android:layout_marginTop="16dp" />
+
+    <!-- Email EditText -->
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/rounded_edittext_background"
+        android:padding="12dp"
+        android:layout_marginTop="16dp" />
+
+    <!-- Password EditText -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:background="@drawable/rounded_edittext_background"
+        android:padding="12dp"
+        android:layout_marginTop="16dp" />
+
+    <!-- Confirm Password EditText -->
+    <EditText
+        android:id="@+id/etConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:background="@drawable/rounded_edittext_background"
+        android:padding="12dp"
+        android:layout_marginTop="16dp" />
+
+    <!-- Sign Up Button -->
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:background="#FFF"
+        android:textColor="#000000"
+        android:padding="12dp"
+        android:layout_marginTop="24dp" />
+
+    <!-- "Or Sign Up With" Text -->
+    <TextView
+        android:id="@+id/tvOrSignUpWith"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OR SIGN UP WITH"
+        android:textColor="#888888"
+        android:layout_marginTop="16dp" />
+
+    <!-- Social Media Buttons (Horizontal LinearLayout) -->
+    <LinearLayout
+        android:id="@+id/socialMediaButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <!-- Facebook Button -->
+        <ImageButton
+            android:id="@+id/btnFacebook"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_facebook"
+            android:background="@android:color/transparent"
+            android:layout_marginHorizontal="10dp"
+            android:contentDescription="Facebook Login"
+            android:scaleType="centerCrop"
+            android:padding="0dp"/>
+
+        <!-- TikTok Button -->
+        <ImageButton
+            android:id="@+id/btnTikTok"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_tiktok"
+            android:background="@android:color/transparent"
+            android:layout_marginHorizontal="10dp"
+            android:contentDescription="TikTok Login"
+            android:scaleType="centerCrop"
+            android:padding="0dp"/>
+
+        <!-- Instagram Button -->
+        <ImageButton
+            android:id="@+id/btnInstagram"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_instagram"
+            android:background="@android:color/transparent"
+            android:layout_marginHorizontal="10dp"
+            android:contentDescription="Instagram Login"
+            android:scaleType="centerCrop"
+            android:padding="0dp"/>
+    </LinearLayout>
+
+    <!-- "Have an account? Log in" and "Need help?" (Horizontal LinearLayout) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:id="@+id/tvLogIn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:text="HAVE AN ACCOUNT? LOG IN"
+            android:textColor="#888888" />
+
+        <TextView
+            android:id="@+id/tvNeedHelp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="NEED HELP?"
+            android:textColor="#888888"
+            android:gravity="end" />
+    </LinearLayout>
+
+</LinearLayout>

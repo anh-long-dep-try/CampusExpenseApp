@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#3CBED9DE">
+
+    <!-- Financial App Illustration -->
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/financial_illustration"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:contentDescription="Financial Illustration"
+        tools:ignore="HardcodedText" />
+
+    <!-- Username Field -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        tools:ignore="HardcodedText"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:autofillHints="username"
+        android:background="@drawable/rounded_edittext_background"
+        android:layout_marginTop="5dp"
+        android:inputType="text"
+        android:hint="Enter username"
+        tools:ignore="HardcodedText,RtlSymmetry"
+        android:paddingStart="10dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="#AAAAAA"
+        android:id="@+id/edtUsername"/>
+
+    <!-- Password Field -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        tools:ignore="HardcodedText"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:autofillHints="password"
+        android:background="@drawable/rounded_edittext_background"
+        android:layout_marginTop="5dp"
+        android:inputType="textPassword"
+        android:hint="Enter password"
+        tools:ignore="HardcodedText,RtlSymmetry"
+        android:paddingStart="10dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="#AAAAAA"/>
+
+    <!-- Login Button -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:background="#A2A2DBA5"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:padding="12dp"
+        tools:ignore="HardcodedText"
+        android:id="@+id/btnLogin"/>
+
+    <!-- OR Divider -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_weight="1"
+            android:background="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OR"
+            android:layout_marginHorizontal="10dp"
+            tools:ignore="HardcodedText" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_weight="1"
+            android:background="#000000" />
+    </LinearLayout>
+
+    <!-- Social Media Login -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_facebook"
+            android:background="@android:color/transparent"
+            android:layout_marginHorizontal="10dp"
+            android:contentDescription="Facebook Login"
+            android:scaleType="centerCrop"
+            android:padding="0dp"
+            tools:ignore="HardcodedText" />
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_tiktok"
+            android:background="@android:color/transparent"
+            android:layout_marginHorizontal="10dp"
+            android:contentDescription="TikTok Login"
+            android:scaleType="centerCrop"
+            android:padding="0dp"
+            tools:ignore="HardcodedText" />
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_instagram"
+            android:background="@android:color/transparent"
+            android:layout_marginHorizontal="10dp"
+            android:contentDescription="Instagram Login"
+            android:scaleType="centerCrop"
+            android:padding="0dp"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <!-- Registration Link -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up An Account"
+            tools:ignore="HardcodedText"
+            android:layout_gravity="center"
+            android:id="@+id/tvSignUp"/>
+    </LinearLayout>
+
+    <!-- Help and Login Link -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Need Help?"
+            tools:ignore="HardcodedText"
+            android:layout_gravity="center"
+            android:layout_marginEnd="40dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Have an Account? Log In"
+            tools:ignore="HardcodedText"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+</LinearLayout>
