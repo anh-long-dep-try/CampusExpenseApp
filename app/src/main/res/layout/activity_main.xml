@@ -14,34 +14,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:padding="8dp">
 
         <ImageButton
             android:id="@+id/btnHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:src="@drawable/ic_home"
-            android:contentDescription="Home" />
+            android:contentDescription="Home"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside" />
 
         <ImageButton
             android:id="@+id/btnCategories"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:src="@drawable/ic_expense"
-            android:contentDescription="My Expenses" />
+            android:contentDescription="My Expenses"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside" />
 
         <ImageButton
             android:id="@+id/btnTransactions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:src="@drawable/ic_budget"
-            android:contentDescription="Set Budget" />
+            android:contentDescription="Set Budget"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside" />
 
         <ImageButton
             android:id="@+id/btnSettings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:src="@drawable/ic_profile"
-            android:contentDescription="Profile" />
+            android:contentDescription="Profile"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside" />
     </LinearLayout>
 </LinearLayout>
