@@ -13,3 +13,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+
+# Files
+.vscode
+
+# Folders
