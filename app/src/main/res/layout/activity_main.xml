@@ -19,9 +19,8 @@
 
         <ImageButton
             android:id="@+id/btnHome"
-            android:layout_width="0dp"
+            android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_weight="1"
             android:src="@drawable/ic_home"
             android:contentDescription="Home"
             android:background="@android:color/transparent"
@@ -29,9 +28,8 @@
 
         <ImageButton
             android:id="@+id/btnCategories"
-            android:layout_width="0dp"
+            android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_weight="1"
             android:src="@drawable/ic_expense"
             android:contentDescription="My Expenses"
             android:background="@android:color/transparent"
@@ -39,9 +37,8 @@
 
         <ImageButton
             android:id="@+id/btnTransactions"
-            android:layout_width="0dp"
+            android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_weight="1"
             android:src="@drawable/ic_budget"
             android:contentDescription="Set Budget"
             android:background="@android:color/transparent"
@@ -49,9 +46,8 @@
 
         <ImageButton
             android:id="@+id/btnSettings"
-            android:layout_width="0dp"
+            android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_weight="1"
             android:src="@drawable/ic_profile"
             android:contentDescription="Profile"
             android:background="@android:color/transparent"
