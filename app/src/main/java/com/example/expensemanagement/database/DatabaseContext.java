@@ -57,12 +57,31 @@ public class DatabaseContext extends SQLiteOpenHelper {
                 + UPDATED_AT + " DATETIME, "
                 + DELETED_AT + " DATETIME ) ";
         db.execSQL(tableBudget); // thuc thi tao bang
+
+        // Tạo bảng expenses
+        String createExpensesTable = "CREATE TABLE expenses ("
+                + "id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "amount REAL NOT NULL, "
+                + "category TEXT NOT NULL, "
+                + "date DATETIME NOT NULL, "
+                + "description TEXT, "
+                + "user_id INTEGER, "
+                + "FOREIGN KEY(user_id) REFERENCES users(id))";
+        db.execSQL(createExpensesTable);
+
+        // Tạo bảng categories
+        String createCategoriesTable = "CREATE TABLE categories ("
+                + "id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "name TEXT NOT NULL UNIQUE)";
+        db.execSQL(createCategoriesTable);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_BUDGET);
+        db.execSQL("DROP TABLE IF EXISTS expenses");
+        db.execSQL("DROP TABLE IF EXISTS categories");
         onCreate(db);
     }
 

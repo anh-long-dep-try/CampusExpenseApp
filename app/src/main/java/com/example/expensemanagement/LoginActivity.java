@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.expensemanagement.database.UserDb;
 import com.example.expensemanagement.model.Users;
+import com.example.expensemanagement.utils.SecurityUtils;
 
 public class LoginActivity extends AppCompatActivity {
     EditText edtUsername, edtPassword;
@@ -41,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         });
         checkLoginUser();
     }
+
     private void checkLoginUser() {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,18 +58,22 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
 
-                Users infoUser = userDb.checkLoginUser(username, password);
-                if (infoUser != null && infoUser.getUsername() != null) {
-                    // login success
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    Bundle bundle = new Bundle();
-                    bundle.putInt("ID_USER", infoUser.getId());
-                    bundle.putString("USER_ACCOUNT", infoUser.getUsername());
-                    bundle.putString("USER_EMAIL", infoUser.getEmail());
-                    bundle.putInt("ROLE_ID", infoUser.getRoleId());
-                    intent.putExtras(bundle);
-                    startActivity(intent);
-                    finish();
+                if (validateLogin(username, password)) {
+                    Users infoUser = userDb.checkLoginUser(username, SecurityUtils.hashPassword(password));
+                    if (infoUser != null && infoUser.getUsername() != null) {
+                        // login success
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("ID_USER", infoUser.getId());
+                        bundle.putString("USER_ACCOUNT", infoUser.getUsername());
+                        bundle.putString("USER_EMAIL", infoUser.getEmail());
+                        bundle.putInt("ROLE_ID", infoUser.getRoleId());
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Account Invalid", Toast.LENGTH_SHORT).show();
+                    }
                 } else {
                     Toast.makeText(LoginActivity.this, "Account Invalid", Toast.LENGTH_SHORT).show();
                 }
@@ -75,4 +81,9 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    private boolean validateLogin(String username, String password) {
+        String hashedPassword = SecurityUtils.hashPassword(password);
+        // Use hashedPassword for validation against the database.
+        return userDb.checkLoginUser(username, hashedPassword) != null;
+    }
 }

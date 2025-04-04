@@ -1,26 +1,31 @@
 package com.example.expensemanagement;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.viewpager2.widget.ViewPager2;
+import com.example.expensemanagement.adapters.MainPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
-    @SuppressLint("MissingInflatedId")
+    private ViewPager2 viewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_home);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        setContentView(R.layout.activity_main);
+
+        viewPager = findViewById(R.id.viewPager);
+        MainPagerAdapter adapter = new MainPagerAdapter(this);
+        viewPager.setAdapter(adapter);
+
+        setupBottomNavigation();
+    }
+
+    private void setupBottomNavigation() {
+        findViewById(R.id.btnHome).setOnClickListener(v -> viewPager.setCurrentItem(0, true));
+        findViewById(R.id.btnCategories).setOnClickListener(v -> viewPager.setCurrentItem(1, true));
+        findViewById(R.id.btnTransactions).setOnClickListener(v -> viewPager.setCurrentItem(2, true));
+        findViewById(R.id.btnSettings).setOnClickListener(v -> viewPager.setCurrentItem(3, true));
     }
 }
