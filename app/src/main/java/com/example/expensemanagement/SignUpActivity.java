@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.expensemanagement.database.UserDb;
+import com.example.expensemanagement.utils.SecurityUtils;
 
 import java.util.regex.Pattern;
 
@@ -111,20 +112,25 @@ public class SignUpActivity extends AppCompatActivity {
                 }
 
                 // Attempt to create account
-                long insert = userDb.insertUserAccount(user, password, email);
-                if (insert == -1) {
-                    Toast.makeText(SignUpActivity.this,
-                            "Sign up failed!",
-                            Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(SignUpActivity.this,
-                            "Account created successfully!",
-                            Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
-                    startActivity(intent);
-                    finish(); // Close SignUpActivity
-                }
+                registerUser(user, email, password);
             }
         });
+    }
+
+    private void registerUser(String username, String email, String password) {
+        String hashedPassword = SecurityUtils.hashPassword(password);
+        long insert = userDb.insertUserAccount(username, hashedPassword, email);
+        if (insert == -1) {
+            Toast.makeText(SignUpActivity.this,
+                    "Sign up failed!",
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(SignUpActivity.this,
+                    "Account created successfully!",
+                    Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish(); // Close SignUpActivity
+        }
     }
 }
